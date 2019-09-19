@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, Input } from './../../../components';
+import { Button, Input } from '../../../components';
 import { Form, Icon } from 'antd';
 import { Link } from 'react-router-dom';
 
