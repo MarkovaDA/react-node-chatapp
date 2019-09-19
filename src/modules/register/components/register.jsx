@@ -2,9 +2,18 @@ import React, { Component } from 'react';
 import { Button, Input } from '../../../components';
 import { Form, Icon } from 'antd';
 import { Link } from 'react-router-dom';
+import Confirm from './confirm';
 
 export default class Register extends Component {
+  state = {
+    status: false
+  }
+
   render() {
+    if (this.state.status) {
+      return <Confirm />
+    }
+
     return (
       <Form>
         <Form.Item>

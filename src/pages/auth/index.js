@@ -21,7 +21,7 @@ class Auth extends React.Component {
               )} />
 
             <Route 
-              path={'/', '/login'}  
+              path={'/login'}  
               render={() => (
                 <>
                   <h2>Войти в аккаунт</h2>
@@ -32,7 +32,7 @@ class Auth extends React.Component {
         </div>
         <div className='auth__content'>
           <Card className='card__shadowed'>
-            <Route exact path={'/', '/login'} component={Login} />
+            <Route path='/login' component={Login} />
             <Route path='/register' component={Register} />
           </Card>
         </div>

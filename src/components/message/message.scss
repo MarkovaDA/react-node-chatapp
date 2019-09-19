@@ -1,0 +1,33 @@
+.message {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  width: 350px;
+  margin-left: 20px; /*убрать потом*/
+
+  &__avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #d9d9d9;
+    z-index: 10;
+  }
+
+  &__content {
+    max-width: 300px;
+    margin-left: 10px;
+    border-radius: 10px;
+    border-bottom-left-radius: 0px; 
+    border: 1px solid green;
+    
+    &--text {
+      padding: 5px;
+    }
+    &--date {
+      display: block;
+      text-align: right;
+      padding-right: 5px;
+    }
+  }
+
+}
