@@ -5,11 +5,10 @@ import formatDistance  from 'date-fns/formatDistance';
 import formatDate from 'date-fns/format';
 import differenceInMinutes from 'date-fns/differenceInMinutes';
 import differenceInYear from 'date-fns/differenceInYears';
-
 import ruLocale from 'date-fns/locale/ru';
 import './message.scss';
 
-const Message = ({avatar, text, timestamp, className}) => {
+const Message = ({avatar, text, timestamp, className, attachments}) => {
   const date = new Date(timestamp);
   const now = new Date();
   
@@ -25,6 +24,7 @@ const Message = ({avatar, text, timestamp, className}) => {
           avatar && <img src={avatar} alt='User icon'/>
         }
       </div>
+
       <div className="message__content">
         <div className="message__content--text">
           {text}
@@ -32,6 +32,16 @@ const Message = ({avatar, text, timestamp, className}) => {
         <div className="message__content--date">
           {formattedDate}
         </div>
+      </div>
+
+      <div className="message__attachments">
+        {
+          attachments && attachments.map(({url, filename}) => 
+            <div className="message__attachments--item">
+              <img src={url} />
+            </div>
+          )
+        }
       </div>
     </div>
   )
