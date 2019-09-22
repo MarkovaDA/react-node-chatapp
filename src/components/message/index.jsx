@@ -1,22 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from "classnames";
-import formatDistance  from 'date-fns/formatDistance';
-import formatDate from 'date-fns/format';
-import differenceInMinutes from 'date-fns/differenceInMinutes';
-import differenceInYear from 'date-fns/differenceInYears';
-import ruLocale from 'date-fns/locale/ru';
+import Time from './../time';
 import './message.scss';
 
 const Message = ({avatar, text, timestamp, className, attachments}) => {
-  const date = new Date(timestamp);
-  const now = new Date();
-  
-  const formattedDate =  
-    differenceInYear(now, date) > 5 || differenceInMinutes(now, date) < 5 ? 
-    formatDistance(date, now, {addSuffix: true, locale: ruLocale}) :
-    formatDate(date, 'dd MMMM yyyy HH:mm', {locale: ruLocale})
-
   return (
     <div className={classNames('message', className)}>
       <div className="message__avatar">
@@ -30,7 +18,7 @@ const Message = ({avatar, text, timestamp, className, attachments}) => {
           {text}
         </div>
         <div className="message__content--date">
-          {formattedDate}
+          <Time timeStamp={timestamp} />
         </div>
         <div className="message__content--typing">
           <span></span>

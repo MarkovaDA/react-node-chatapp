@@ -18,6 +18,7 @@
         
         & img {
             position: absolute;
+            transform: scale(1);
             left: calc(50% - 50px);
             width: 100px;
             height: auto;
