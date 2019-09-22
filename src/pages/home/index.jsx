@@ -1,22 +1,38 @@
 import React from 'react';
+import { Message, DialogItem } from '../../components';
 import './home.scss';
-import { Message } from '../../components';
 
 class Home extends React.Component {
   render() {
     return (
       <div className='home'>
+        <DialogItem user={
+          {
+            fullname: 'Darya Markova',
+            avatar: 'https://images.all-free-download.com/images/wallpapers_thum/zoe_saldana_as_neytiri_in_avatar_5659.jpg',
+            isOnline: true
+          }
+        } unread='5' />
+
+        <DialogItem user={
+          {
+            fullname: 'Vitaly Kholuenko',
+            avatar: 'https://avatars.mds.yandex.net/get-pdb/1209255/73b67609-f0e4-44c6-963e-e54a99b6dfff/s800',
+            isOnline: false
+          }
+        } unread='2' />
+
         <Message 
           text='Привет! Как дела?' 
           timestamp={'2019-04-11T10:20:30Z'} 
           className='aligned_right' 
         />
 
-        <Message 
+        {/* <Message 
           text='' 
           timestamp={'2019-04-11T10:20:30Z'} 
           className='typing aligned_right' 
-        />
+        /> */}
 
         <Message 
           text='Привет! Все отлично! Вчера вернулся из отпуска. Были в походе в горах, фоток куча потом покажу А у тебя как?' 

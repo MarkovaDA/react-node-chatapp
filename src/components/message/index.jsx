@@ -8,7 +8,7 @@ import differenceInYear from 'date-fns/differenceInYears';
 import ruLocale from 'date-fns/locale/ru';
 import './message.scss';
 
-const Message = ({avatar, text, timestamp, className, attachments, isTyping}) => {
+const Message = ({avatar, text, timestamp, className, attachments}) => {
   const date = new Date(timestamp);
   const now = new Date();
   
