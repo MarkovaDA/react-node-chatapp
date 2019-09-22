@@ -159,61 +159,6 @@
       left: 0px;
       top: 0px;
       line-height: 40px;
-
-      & span {
-        display: inline-block;
-        width: 10px;
-        height: 10px;
-        margin-left: 10px;
-        background-color: #c8d2e6;
-        border: 1px solid transparent;
-        opacity: 0.2;
-        border-radius: 5px;
-      }
-      & span:nth-of-type(1) {
-        animation: blicking1 1.5s infinite;
-      }
-
-      & span:nth-of-type(2) {
-        animation: blicking2 1.5s infinite;
-      }
-
-      & span:nth-of-type(3) {
-        animation: blicking3 1.5s infinite;
-      }
     }
-  }
-}
-
-@keyframes blicking1 {
-  0% {
-    opacity: 0.2
-  }
-
-  33% {
-    opacity: 1;
-    background-color: #a5b5d6;
-  }
-}
-
-@keyframes blicking2 {
-  33% {
-    opacity: 0.2
-  }
-
-  66% {
-    opacity: 1;
-    background-color: #a5b5d6;
-  }
-}
-
-@keyframes blicking3 {
-  66% {
-    opacity: 0.2
-  }
-
-  100% {
-    opacity: 1;
-    background-color: #a5b5d6;
   }
 }

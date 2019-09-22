@@ -71,4 +71,26 @@
             text-align: center;
         }
     }
+
+    &__content--typed {
+        display: none;
+        flex-basis: 90%;
+    }
+}
+
+.typed {
+    .dialog-item {
+        &__content--short-message {
+            display: none;
+        }
+
+        &__content--count-unread {
+            order: 5;
+        }
+
+        &__content--typed {
+            display: block;
+            order: 4;
+        }
+    }
 }

@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from "classnames";
 import Time from './../time';
+import Process from './../process';
 import './message.scss';
 
 const Message = ({avatar, text, timestamp, className, attachments}) => {
@@ -21,9 +22,7 @@ const Message = ({avatar, text, timestamp, className, attachments}) => {
           <Time timeStamp={timestamp} />
         </div>
         <div className="message__content--typing">
-          <span></span>
-          <span></span>
-          <span></span>
+          <Process />
         </div>
       </div>
 
