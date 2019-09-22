@@ -13,6 +13,12 @@ class Home extends React.Component {
         />
 
         <Message 
+          text='' 
+          timestamp={'2019-04-11T10:20:30Z'} 
+          className='typing aligned_right' 
+        />
+
+        <Message 
           text='Привет! Все отлично! Вчера вернулся из отпуска. Были в походе в горах, фоток куча потом покажу А у тебя как?' 
           timestamp={new Date().toISOString()}
           className='aligned_left dark'

@@ -8,7 +8,7 @@ import differenceInYear from 'date-fns/differenceInYears';
 import ruLocale from 'date-fns/locale/ru';
 import './message.scss';
 
-const Message = ({avatar, text, timestamp, className, attachments}) => {
+const Message = ({avatar, text, timestamp, className, attachments, isTyping}) => {
   const date = new Date(timestamp);
   const now = new Date();
   
@@ -31,6 +31,11 @@ const Message = ({avatar, text, timestamp, className, attachments}) => {
         </div>
         <div className="message__content--date">
           {formattedDate}
+        </div>
+        <div className="message__content--typing">
+          <span></span>
+          <span></span>
+          <span></span>
         </div>
       </div>
 
