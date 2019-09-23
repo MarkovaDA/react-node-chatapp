@@ -1,0 +1,23 @@
+.message {
+  &__content--text {
+    display: flex;
+    align-items: center;
+  }
+
+  &__content--duration {
+    padding-left: 10px;    
+    font-size: 12px;
+    opacity: 0.6;
+  }
+
+  .anticon svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .process__item {
+    margin-left: 5px;
+    width: 8px;
+    height: 8px;
+  }
+}

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Message, Dialogs } from '../../components';
+import { Message, Dialogs, AudioMessage } from '../../components';
 import './home.scss';
 
 class Home extends React.Component {
@@ -7,6 +7,12 @@ class Home extends React.Component {
     return (
       <div className='home'>
         <Dialogs />
+
+        <br />
+
+        <AudioMessage />
+
+        <br />
 
         <Message 
           text='Привет! Как дела?' 

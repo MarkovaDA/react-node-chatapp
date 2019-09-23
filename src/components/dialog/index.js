@@ -69,7 +69,7 @@ Dialogs.defaultProps = {
         text: 'I want to eat',
         time: '2019-09-23T10:15:00Z'
       },
-      unread: 2
+      unread: 0
     },
     {
       id: 3,
