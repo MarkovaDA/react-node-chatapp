@@ -30,7 +30,7 @@ const Message = ({avatar, text, timestamp, className, attachments}) => {
         {
           attachments && attachments.map(({url, filename}, index) => 
             <div className="message__attachments--item" key={index}>
-              <img src={url} />
+              <img src={url} alt=''/>
             </div>
           )
         }

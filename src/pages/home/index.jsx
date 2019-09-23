@@ -10,7 +10,7 @@ class Home extends React.Component {
 
         <br />
 
-        <AudioMessage />
+        <AudioMessage audio={'https://notificationsounds.com/soundfiles/13f3cf8c531952d72e5847c4183e6910/file-c2_men-laughing.mp3'} />
 
         <br />
 

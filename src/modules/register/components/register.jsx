@@ -14,7 +14,7 @@ export default class Register extends Component {
       return <Confirm />
     }
     
-    const { values, errors, touched, handleSubmit, handleChange, handleBlur, isSubmitting } = this.props;
+    const { values, errors, touched, handleSubmit, handleChange, handleBlur } = this.props;
 
     return (
       <Form onSubmit={handleSubmit}>
