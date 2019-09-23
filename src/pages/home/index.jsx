@@ -1,46 +1,12 @@
 import React from 'react';
-import { Message, DialogItem, Process } from '../../components';
+import { Message, Dialogs } from '../../components';
 import './home.scss';
 
 class Home extends React.Component {
   render() {
     return (
       <div className='home'>
-        {/* className=typed */}
-        <DialogItem user={
-          {
-            fullname: 'Vitaly Kholuenko',
-            avatar: 'https://avatars.mds.yandex.net/get-pdb/1209255/73b67609-f0e4-44c6-963e-e54a99b6dfff/s800',
-            isOnline: true,
-            lastMessage: {
-              text: 'Я вернулся',
-              time: '2019-09-22T13:15:00Z'
-            }
-          }} 
-          unread='2' />
-
-        <DialogItem user={
-          {
-            fullname: 'Darya Markova',
-            avatar: 'https://images.all-free-download.com/images/wallpapers_thum/zoe_saldana_as_neytiri_in_avatar_5659.jpg',
-            isOnline: false,
-            lastMessage: {
-              text: 'Люблю котиков',
-              time: '2019-02-20T13:49:15Z'
-            },
-          }
-        } unread='5' />
-
-        <DialogItem user={
-          {
-            fullname: 'Natalya Smirnova',
-            isOnline: false,
-            lastMessage: {
-              text: '',
-              time: '2019-02-20T13:49:15Z'
-            }
-          }
-        } unread='1' className='typed' />
+        <Dialogs />
 
         <Message 
           text='Привет! Как дела?' 

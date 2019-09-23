@@ -1,15 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Time from './../time';
 import Process from './../process';
 import { Badge } from 'antd';
-import differenceInDays from 'date-fns/differenceInDays';
+import isToday from 'date-fns/isToday';
+import format from 'date-fns/format';
 import classNames from "classnames";
 
 import './dialog-item.scss';
 
 const DialogItem = ({user, unread, className}) => {
-    const format = differenceInDays(new Date(), new Date(user.lastMessage.time)) < 1 ? 'HH:mm' : 'dd/MM';
+    const createdAt = new Date(user.lastMessage.time);
+    const formattedDate = isToday(createdAt) ? format(createdAt, 'HH:mm') : format(createdAt, 'dd/MM/yyyy');
 
     return (
         <div className={classNames('dialog-item', className)}>
@@ -26,7 +27,7 @@ const DialogItem = ({user, unread, className}) => {
                     <span>{user.fullname}</span>
                 </div>
                 <div className='dialog-item__content--time'>
-                    <Time timeStamp={user.lastMessage.time} format={format} />
+                   {formattedDate}
                 </div>
                 <div className='dialog-item__content--short-message'>
                     {
