@@ -1,28 +1,52 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { Time, Process }  from './../';
+import classNames from 'classnames';
+import { Time }  from './../';
 import { Icon } from 'antd';
+import { convertToPlayerTime } from '../../utils/helpers/time-preview';
 import './audio-message.scss';
 import './../message/message.scss';
 
-const AudioMessage =  ({avatar, audio, timestamp}) => {
-  const [isRunning, setRunning] = useState(false);
-  const [isProcessed] = useState(false);
+const AudioMessage =  ({avatar, audio, duration, className, timestamp}) => {
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [currentTime, setCurrentTime] = useState(0);
 
   const audioPlayer = useRef(null);
+  
+  useEffect(() => {
+    const current = audioPlayer.current;
+    current.addEventListener('playing', 
+      () => {}, false
+    );
+
+    current.addEventListener('pause', 
+      () => {}, false
+    );
+    current.addEventListener('ended', 
+      () => {
+        setIsPlaying(false);
+        setCurrentTime(0);
+      }, false
+    );
+    current.addEventListener('timeupdate', () => {
+      const currentTime = current.currentTime;
+      setCurrentTime(currentTime);
+    })
+  }, []);
 
   const play = () => {
-    setRunning(true);
+    setIsPlaying(true);
+    audioPlayer.current.volume=0.1;
     audioPlayer.current.play();
   };
 
   const pause = () => {
-    setRunning(false);
+    setIsPlaying(false);
     audioPlayer.current.pause();
   }
 
   return (
-    <div className="message aligned_left audio-message dark">
+    <div className={classNames('message audio-message', className)}>
       <div className="message__avatar">
         { 
           avatar && <img src={avatar} alt='User icon' />
@@ -30,19 +54,25 @@ const AudioMessage =  ({avatar, audio, timestamp}) => {
       </div>
       <div className="message__content">
         <div className="message__content--text">
-
           <audio src={audio} ref={audioPlayer} preload="audio" />
-
           {
-            isRunning ?  
+            isPlaying ?  
               <Icon type="pause-circle" theme='filled' onClick={pause}/> : 
               <Icon type="play-circle" theme='filled'  onClick={play} />
           }
-          { 
-            isProcessed && <Process /> 
+          <span className="message__content--duration">
+            {convertToPlayerTime(currentTime)} / {convertToPlayerTime(duration)}
+          </span>
+          {
+            <span 
+              className="message__process" 
+              style={{
+                width: `${currentTime/duration*100}%`
+              }}
+              >
+            </span>
           }
-          <span className="message__content--duration">00:19</span>
-          <span className="message__process"></span>
+          
         </div>
         <div className="message__content--date">
           <Time timeStamp={new Date().toISOString()} />
