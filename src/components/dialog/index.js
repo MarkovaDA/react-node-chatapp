@@ -10,7 +10,6 @@ const Dialogs = ({items}) => (
     {
       orderBy(items, [(it) => getTime(new Date(it.lastMessage.time))], ['desc'])
        .map(item => 
-
         <DialogItem 
           className={item.isTyping ? 'typed' : ''} 
           key={item.id} user={item} 
@@ -29,7 +28,9 @@ Dialogs.defaultProps = {
   items: [
     {
       id: 0,
-      fullname: 'Ivan Petrov',
+      username: 'Ivan Petrov',
+      firstname: 'Ivan',
+      lastname: 'Petrov',
       isTyping: false,
       isOnline: true,
       lastMessage: {
@@ -40,7 +41,9 @@ Dialogs.defaultProps = {
     },
     { 
       id: 1,
-      fullname: 'Vitaly Kholuenko',
+      username: 'Vitaly Kholuenko',
+      firstname: 'Vitaly',
+      lastname: 'Kholuenko',
       avatar: 'https://avatars.mds.yandex.net/get-pdb/1209255/73b67609-f0e4-44c6-963e-e54a99b6dfff/s800',
       isOnline: true,
       lastMessage: {
@@ -51,7 +54,9 @@ Dialogs.defaultProps = {
     },
     {
       id: 2,
-      fullname: 'Darya Markova',
+      username: 'Darya Markova',
+      firstname: 'Darya',
+      lastname: 'Markova',
       avatar: 'https://images.all-free-download.com/images/wallpapers_thum/zoe_saldana_as_neytiri_in_avatar_5659.jpg',
       isOnline: false,
       lastMessage: {
@@ -62,8 +67,9 @@ Dialogs.defaultProps = {
     }, 
     { 
       id: 5,
-      fullname: 'Cat',
-      avatar: 'https://pbs.twimg.com/profile_images/772971464127569920/pEevCeXG_400x400.jpg',
+      username: 'Cat',
+      firstname: 'Cat',
+      lastname: 'Dog',
       isOnline: true,
       lastMessage: {
         text: 'I want to eat',
@@ -73,7 +79,9 @@ Dialogs.defaultProps = {
     },
     {
       id: 3,
-      fullname: 'Natalya Smirnova',
+      username: 'Albina Andreeva',
+      firstname: 'Natalya',
+      lastname: 'Smirnova',
       isTyping: false,
       isOnline: true,
       lastMessage: {

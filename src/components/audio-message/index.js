@@ -14,6 +14,8 @@ const AudioMessage =  ({avatar, audio, duration, className, timestamp}) => {
   const audioPlayer = useRef(null);
   
   useEffect(() => {
+    audioPlayer.current.volume=0.1;
+
     const current = audioPlayer.current;
     current.addEventListener('playing', 
       () => {}, false
@@ -36,13 +38,14 @@ const AudioMessage =  ({avatar, audio, duration, className, timestamp}) => {
 
   const play = () => {
     setIsPlaying(true);
-    audioPlayer.current.volume=0.1;
-    audioPlayer.current.play();
+    if (audio)
+      audioPlayer.current.play();
   };
 
   const pause = () => {
     setIsPlaying(false);
-    audioPlayer.current.pause();
+    if (audio)
+      audioPlayer.current.pause();
   }
 
   return (
@@ -63,15 +66,14 @@ const AudioMessage =  ({avatar, audio, duration, className, timestamp}) => {
           <span className="message__content--duration">
             {convertToPlayerTime(currentTime)} / {convertToPlayerTime(duration)}
           </span>
-          {
-            <span 
-              className="message__process" 
-              style={{
-                width: `${currentTime/duration*100}%`
-              }}
-              >
-            </span>
-          }
+          
+          <span 
+            className="message__process" 
+            style={{
+              width: `${currentTime/duration*100}%`
+            }}
+            >
+          </span>
           
         </div>
         <div className="message__content--date">
