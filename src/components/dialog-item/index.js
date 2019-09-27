@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Process from './../process';
-import { Badge } from 'antd';
 import isToday from 'date-fns/isToday';
 import format from 'date-fns/format';
 import classNames from "classnames";
@@ -55,7 +54,7 @@ const DialogItem = ({user, unread, className}) => {
                     }
                 </div>
                 <div className='dialog-item__content--count-unread'>
-                    <Badge count={unread} />
+                    <span className='message-badge'>{unread}</span>
                 </div>
                 <div className='dialog-item__content--typed'>
                     <Process  />
