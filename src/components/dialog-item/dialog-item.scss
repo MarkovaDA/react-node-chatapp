@@ -1,12 +1,13 @@
 @import 'src/styles/variables.scss';
 $avatar-size: 50;
+$padding-left: 15;
 
 .dialog-item {
     position: relative;
-    max-width: 350px;
     display: flex;
     overflow: hidden;
-    padding: 2px;
+    align-items: center; 
+    padding-left: #{$padding-left}px;
 
     &__avatar {
         position: relative;
@@ -15,7 +16,6 @@ $avatar-size: 50;
         height: #{$avatar-size}px;
         background-color: $light-grey;
         border-radius: 50%;
-        outline: 1px solid transparent;
 
         & img {
             position: absolute;
@@ -28,13 +28,13 @@ $avatar-size: 50;
         &--online {
             position: absolute;
             display: block;
-            left: #{$avatar-size - 12}px;
-            top: #{$avatar-size - 12}px;
-            width: 12px;
-            height: 12px;
+            left: #{$padding-left + $avatar-size - 12}px;
+            top: #{$avatar-size - 8}px;
+            width: 13px;
+            height: 13px;
             border-radius: 15px;
             background-color: #53e0a1;
-            border: 2px solid white;
+            border: 3px solid white;
             z-index: 10;
         }
 
@@ -45,7 +45,7 @@ $avatar-size: 50;
             border-radius: 50%;
             text-align: center;
             line-height: #{$avatar-size}px;
-            font-size: 20px;
+            font-size: 18px;
             font-weight: 500;
             color: #fff;
         }
@@ -55,11 +55,11 @@ $avatar-size: 50;
         width: calc(100% - #{$avatar-size}px);
         display: flex;
         flex-wrap: wrap;
-        padding: 5px 10px;
-        border-bottom: 1px solid $light-grey;
+        padding: 10px;
+
         &--fullname {
             flex-basis: 70%;
-            font-size: 16px;
+            font-size: 14px;
             font-weight: 500;
         }
 
@@ -88,6 +88,11 @@ $avatar-size: 50;
     &__content--typed {
         display: none;
         flex-basis: 90%;
+    }
+
+    &:hover {
+        background-color: $light-grey;
+        cursor: pointer;
     }
 }
 

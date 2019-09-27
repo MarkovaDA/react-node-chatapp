@@ -44,7 +44,6 @@ Dialogs.defaultProps = {
       username: 'Vitaly Kholuenko',
       firstname: 'Vitaly',
       lastname: 'Kholuenko',
-      avatar: 'https://avatars.mds.yandex.net/get-pdb/1209255/73b67609-f0e4-44c6-963e-e54a99b6dfff/s800',
       isOnline: true,
       lastMessage: {
         text: 'Я вернулся',
@@ -57,8 +56,7 @@ Dialogs.defaultProps = {
       username: 'Darya Markova',
       firstname: 'Darya',
       lastname: 'Markova',
-      avatar: 'https://images.all-free-download.com/images/wallpapers_thum/zoe_saldana_as_neytiri_in_avatar_5659.jpg',
-      isOnline: false,
+      isOnline: true,
       lastMessage: {
         text: 'Люблю котиков',
         time: '2019-02-20T13:49:15Z'

@@ -13,8 +13,8 @@ const getAvatar = (user) => {
     if (user.avatar) {
         return  <img src={user.avatar} alt='user dialog icon' />
     } else {
-        const colorLight = stringToHslColor(user.username, 60, 80);
-        const colorDark = stringToHslColor(user.username, 60, 70);
+        const colorLight = stringToHslColor(user.username, 60, 70);
+        const colorDark = stringToHslColor(user.username, 50, 60);
 
         return (
             <span 
