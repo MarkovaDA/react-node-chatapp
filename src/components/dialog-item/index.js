@@ -7,6 +7,7 @@ import classNames from "classnames";
 
 import './dialog-item.scss';
 import { stringToHslColor } from '../../utils/helpers/color-generator';
+import { Button } from 'antd';
 
 const getAvatar = (user) => {
     if (user.avatar) {
@@ -54,7 +55,7 @@ const DialogItem = ({user, unread, className}) => {
                     }
                 </div>
                 <div className='dialog-item__content--count-unread'>
-                    <span className='message-badge'>{unread}</span>
+                    <Button type="primary" shape="circle" size='small'>{unread}</Button>
                 </div>
                 <div className='dialog-item__content--typed'>
                     <Process  />

@@ -10,10 +10,11 @@ const Dialogs = ({items}) => (
     {
       orderBy(items, [(it) => getTime(new Date(it.lastMessage.time))], ['desc'])
        .map(item => 
+        
         <DialogItem 
           className={item.isTyping ? 'typed' : ''} 
           key={item.id} user={item} 
-          unread={item.unread} />
+          unread={item.unread}  />
         )
     }
   </div>

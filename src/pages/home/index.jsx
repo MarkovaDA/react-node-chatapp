@@ -1,8 +1,8 @@
 import React from 'react';
 import { Message, Dialogs, AudioMessage } from '../../components';
 import './home.scss';
-import { Icon, Input } from 'antd';
-const { Search } = Input;
+import { Icon, Input, Button } from 'antd';
+const { Search  } = Input;
 
 class Home extends React.Component {
   render() {
@@ -13,7 +13,7 @@ class Home extends React.Component {
               <Icon className='header__icon' type='usergroup-add' />
               <span className='header__title'>Диалоги</span>
               <Icon className='header__icon' type='edit' /> 
-              <Search placeholder='Search...' size='large' />
+              <Search placeholder='Поиск...' size='large' />
           </div>
           <div className='content'>
             <Dialogs />
@@ -37,11 +37,11 @@ class Home extends React.Component {
               className='aligned_right' 
               />
 
-            <Message 
+            {/* <Message 
               text='' 
               timestamp={'2019-04-11T10:20:30Z'} 
               className='typing aligned_right' 
-            /> 
+            />  */}
 
             <Message 
               text='Привет! Все отлично! Вчера вернулся из отпуска. Были в походе в горах, фоток куча потом покажу А у тебя как?' 
@@ -96,6 +96,24 @@ class Home extends React.Component {
             />  
 
           </div>
+        </div>
+        <div className='home__dialog--message'>
+            <Input
+              size='large' 
+              prefix={<Icon type="smile"  />}
+              type='textarea'
+              autosize={{minRows:2, maxRows: 6}}
+              suffix={
+                <>
+                  <Button shape="circle">
+                    <Icon type="camera"  />
+                  </Button>
+                  <Button shape="circle">
+                    <Icon type="audio"  />
+                  </Button>
+                </>
+              }
+              placeholder='Введите текст сообщения...' />
         </div>
       </div>
     );

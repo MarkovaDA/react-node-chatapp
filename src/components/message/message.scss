@@ -26,7 +26,7 @@
     &--text {
       border-radius: 10px;
       border: 1px solid transparent;
-      box-shadow: 0 2px 2px rgba(0,0,0,0.1);
+      // box-shadow: 0 2px 2px rgba(0,0,0,0.1);
       border-color: $light-grey-stronger;
       padding: 10px;
     }
@@ -81,8 +81,9 @@
 }
 
 .message.aligned_right {
-  flex-direction: row-reverse;
-  align-items: flex-start;
+  justify-content: flex-end;
+  // flex-direction: row-reverse;
+  // align-items: flex-start;
 }
 
 .aligned_left {
@@ -108,10 +109,16 @@
 
 .aligned_right {
   .message {
+    &__avatar {
+      order: 3;
+    }
+
     &__content {
       margin-left: 0px;
       margin-right: 10px;
-      
+
+      order: 2;
+
       &--text {
         border-bottom-right-radius: 0px; 
       }
@@ -119,6 +126,10 @@
       &--date {
         text-align: right;
       }
+    }
+
+    &__attachments {
+      order: 1;
     }
   }
 }

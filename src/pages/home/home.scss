@@ -5,8 +5,10 @@ $bow-shadow: rgba(0,0,0,0.05);
   width: 90%;
   height: 100%;
   display: flex;
+  flex-wrap: wrap;
   margin: 20px 5%;
   box-shadow: 0px 0 10px rgba(0,0,0,0.08);
+  position: relative;
   border-radius: 5px;
 
 
@@ -59,7 +61,7 @@ $bow-shadow: rgba(0,0,0,0.05);
 
       &__status {
         display: block;
-        font-weight: 300;
+        font-weight: 400;
         color: $accent-grey;
         font-size: 12px;
       }
@@ -67,6 +69,19 @@ $bow-shadow: rgba(0,0,0,0.05);
 
     .content {
       padding: 10px 20px;
+    }
+  }
+
+  &__dialog--message {
+    position: absolute;
+    width: calc(100% - 440px);
+    height: 50px;
+    bottom: 30px;
+    left: 400px;
+    padding: 10px;
+
+    button {
+      border: none;
     }
   }
 }
