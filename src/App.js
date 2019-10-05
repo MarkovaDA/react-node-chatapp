@@ -1,15 +1,24 @@
 import React from 'react';
 import './App.css';
 import { Auth, Home }  from './pages';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, Redirect } from 'react-router-dom';
 
 const App = () => {
+  const isAuthorized = false;
+
   return (
-    <div className="wrapper">
+    <div className="wrapper">  
       <Switch>
-        <Route path={'/im'} component={ Home } />
-        <Auth />
+        {
+          !isAuthorized ?  <Redirect to='/login' /> : <Redirect to='/im' />
+        }
       </Switch>
+      {
+        !isAuthorized && <Auth />
+      } 
+      {
+        isAuthorized && <Home />
+      }
     </div>
   );
 }

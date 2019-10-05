@@ -98,22 +98,22 @@ class Home extends React.Component {
           </div>
         </div>
         <div className='home__dialog--message'>
-            <Input
-              size='large' 
-              prefix={<Icon type="smile"  />}
-              type='textarea'
-              autosize={{minRows:2, maxRows: 6}}
-              suffix={
-                <>
-                  <Button shape="circle">
-                    <Icon type="camera"  />
-                  </Button>
-                  <Button shape="circle">
-                    <Icon type="audio"  />
-                  </Button>
-                </>
-              }
-              placeholder='Введите текст сообщения...' />
+          <Icon type="smile"  />
+          <Input
+            size='large' 
+            type='textarea'
+            autosize={{minRows:2, maxRows: 6}}
+            suffix={
+              <>
+                <Button shape="circle">
+                  <Icon type="camera"  />
+                </Button>
+                <Button shape="circle">
+                  <Icon type="audio"  />
+                </Button>
+              </>
+            }
+            placeholder='Введите текст сообщения...' />
         </div>
       </div>
     );

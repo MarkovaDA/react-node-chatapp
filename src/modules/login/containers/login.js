@@ -1,11 +1,12 @@
 import Login from '../components/login';
 import { withFormik } from 'formik';
+import axios from 'axios';
 
 export default withFormik({
   validate: values => {
     let errors = {};
 
-    if (!values.login) {
+    /*if (!values.login) {
       errors.login = 'Введите логин';
     } else if (
       !/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$/i.test(values.login)
@@ -19,8 +20,16 @@ export default withFormik({
       errors.password = 'Некорректный пароль';
     }
 
-    return errors;
+    return errors;*/
+    return null;
   },
+  handleSubmit: (values, { setSubmitting }) => {
+    // TODO: handle response 
+    return axios.post(`${process.env.REACT_APP_API_URL}/user/login`, {
+      username: values.login,
+      password: values.password
+    })
+  }
 })(Login);
 
 

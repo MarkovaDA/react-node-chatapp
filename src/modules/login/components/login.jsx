@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 export default class Login extends Component {
   render() {
-    const { values, errors, touched, handleChange, handleBlur } = this.props;
+    const { values, errors, touched, handleChange, handleBlur, handleSubmit } = this.props;
 
     return (
       <Form>
@@ -44,6 +44,7 @@ export default class Login extends Component {
       
         <Form.Item>
           <Button 
+            onClick={handleSubmit}
             disabled={errors.login || errors.password} 
             className='button__large' type='primary' size='large'>Вход
           </Button>

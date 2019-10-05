@@ -73,13 +73,18 @@ $bow-shadow: rgba(0,0,0,0.05);
   }
 
   &__dialog--message {
+    display: flex;
+    align-items: center;
     position: absolute;
     width: calc(100% - 440px);
     height: 50px;
     bottom: 30px;
     left: 400px;
     padding: 10px;
-
+    i.anticon-smile {
+      font-size: 16px;
+      margin-right: 5px;
+    }
     button {
       border: none;
     }
