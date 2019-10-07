@@ -1,26 +1,41 @@
 import React from 'react';
-import './App.css';
 import { Auth, Home }  from './pages';
-import { Route, Switch, Redirect } from 'react-router-dom';
+import { Switch, Redirect } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { AppMenu } from './components';
+import './App.css';
 
-const App = () => {
-  const isAuthorized = false;
+const App = (props) => {
+  const isAuthorized = props.user.token  || localStorage.getItem('token');
 
   return (
-    <div className="wrapper">  
-      <Switch>
+      <div className="app">
         {
-          !isAuthorized ?  <Redirect to='/login' /> : <Redirect to='/im' />
+          isAuthorized ? 
+          <div className="app__header">
+            <AppMenu />
+           </div> : null
+        }  
+        <Switch>
+          {
+            !isAuthorized ?  <Redirect to='/login' /> : <Redirect to='/im' />
+          }
+        </Switch>
+        {
+          !isAuthorized && <Auth />
+        } 
+        {
+          isAuthorized && <Home />
         }
-      </Switch>
-      {
-        !isAuthorized && <Auth />
-      } 
-      {
-        isAuthorized && <Home />
-      }
-    </div>
+      </div>
   );
 }
 
-export default App;
+export default connect(
+  ({user}) => {
+    return {user}
+  },
+  () => {
+    return {}
+  }
+)(App);

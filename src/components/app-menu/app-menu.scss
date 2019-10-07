@@ -1,0 +1,26 @@
+@import 'src/styles/variables.scss';
+.app__menu {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-right: 5%;
+  width: 100%;
+
+  &--avatar {
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background: $light-grey;
+  }
+
+  & span {
+    margin-left: 5px;
+  }
+  
+  i.anticon-down {
+    transform: scaleY(0.6);
+    font-size: 12px;
+    cursor: pointer;
+  }
+}

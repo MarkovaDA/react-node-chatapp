@@ -28,6 +28,7 @@ class Auth extends React.Component {
                   <p>Пожалуйста, войдите в свой аккаунт</p> 
                 </>
               )} />
+
           </Switch>
         </div>
         <div className='auth__content'>

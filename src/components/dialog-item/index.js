@@ -55,7 +55,9 @@ const DialogItem = ({user, unread, className}) => {
                     }
                 </div>
                 <div className='dialog-item__content--count-unread'>
-                    <Button type="primary" shape="circle" size='small'>{unread}</Button>
+                    {
+                        unread ? <Button type="primary" shape="circle" size='small'>{unread}</Button> : null
+                    }
                 </div>
                 <div className='dialog-item__content--typed'>
                     <Process  />

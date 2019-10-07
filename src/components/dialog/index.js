@@ -50,7 +50,7 @@ Dialogs.defaultProps = {
         text: 'Я вернулся',
         time: '2019-09-23T13:15:00Z'
       },
-      unread: 2
+      unread: 0
     },
     {
       id: 2,
@@ -62,7 +62,7 @@ Dialogs.defaultProps = {
         text: 'Люблю котиков',
         time: '2019-02-20T13:49:15Z'
       },
-      unread: 5
+      unread: 0
     }, 
     { 
       id: 5,
@@ -87,7 +87,7 @@ Dialogs.defaultProps = {
         text: '',
         time: '2019-02-22T13:49:15Z'
       },
-      unread: 1
+      unread: 0
     }
   ]
 }

@@ -93,28 +93,32 @@ class Home extends React.Component {
               text='Очень интересно... Это уже третий кот у тебя! Что стобой происходит?' 
               timestamp={'2019-02-20T13:49:15Z'} 
               className='aligned_left dark' 
-            />  
+            /> 
+
+            <div className='home__dialog--message'>
+              <Input
+                size='large' 
+                type='textarea'
+                autosize={{minRows:2, maxRows: 6}}
+                prefix={
+                  <Icon type="smile"  />
+                }
+                suffix={
+                  <>
+                    <Button shape="circle">
+                      <Icon type="camera"  />
+                    </Button>
+                    <Button shape="circle">
+                      <Icon type="audio"  />
+                    </Button>
+                  </>
+                }
+                placeholder='Введите текст сообщения...' />
+          </div> 
 
           </div>
         </div>
-        <div className='home__dialog--message'>
-          <Icon type="smile"  />
-          <Input
-            size='large' 
-            type='textarea'
-            autosize={{minRows:2, maxRows: 6}}
-            suffix={
-              <>
-                <Button shape="circle">
-                  <Icon type="camera"  />
-                </Button>
-                <Button shape="circle">
-                  <Icon type="audio"  />
-                </Button>
-              </>
-            }
-            placeholder='Введите текст сообщения...' />
-        </div>
+       
       </div>
     );
   }

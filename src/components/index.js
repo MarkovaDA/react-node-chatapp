@@ -7,3 +7,4 @@ export { default as Dialogs } from './dialog';
 export { default as Time } from './time';
 export { default as Process } from './process';
 export { default as AudioMessage } from './audio-message';
+export { default as AppMenu } from './app-menu';
