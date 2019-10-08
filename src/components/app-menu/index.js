@@ -7,9 +7,12 @@ import './app-menu.scss';
 
 const AppMenu = props => {
   const menuOptions = (
-    <Menu>
+    <Menu style={{width: '200px'}}>
       <Menu.Item onClick={props.logout}>
-        <a>Выход</a>
+        <span>
+          Выход&nbsp;
+          <Icon type='logout' />
+        </span>
       </Menu.Item>
     </Menu>
   )
@@ -18,7 +21,7 @@ const AppMenu = props => {
     <div className="app__menu">
        <span className="app__menu--username">User</span>
         <span className="app__menu--avatar"></span>
-        <Dropdown overlay={menuOptions}>
+        <Dropdown overlay={menuOptions} trigger={['click']}>
           <Icon type="down"/>
         </Dropdown>
     </div>

@@ -17,6 +17,15 @@ const Actions = {
   logoutUser: () => dispatch => {
     localStorage.removeItem('token');
     dispatch(Actions.unsetUser())
+  },
+  getUser: () => dispatch => {
+    if (!localStorage.getItem('token')) {
+      return dispatch(Actions.unsetUser());
+    }
+
+    return userApi.getUser().then(({data}) => {
+      dispatch(Actions.setUser(data))
+    })
   }
 };
 

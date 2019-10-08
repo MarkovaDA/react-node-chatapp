@@ -1,16 +1,18 @@
-import axios from 'axios';
+import axios from './../axios';
 
 export default {
   login: (data) => {
     const { login, password } = data;
 
-    return axios.post(`${process.env.REACT_APP_API_URL}/user/login`, {
+    return axios.post('/user/login', {
       username: login,
       password: password
     })
   },
-
+  getUser: () => {
+    return axios.get('/user');
+  },
   logout: () => {
-    return axios.post(`${process.env.REACT_APP_API_URL}/user/logout`)
+    return axios.post('/user/logout')
   }
 };

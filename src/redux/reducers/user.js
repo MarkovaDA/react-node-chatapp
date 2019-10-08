@@ -4,9 +4,15 @@ const initialState = {
 export default (state = initialState, {type, payload}) => {
   switch(type) {
     case 'USER:SET_DATA':
-      return payload
+      return {
+        ...state,
+         user: {...state.user, ...payload}
+      }
     case 'USER:UNSET_DATA':
-      return initialState;
+      return {
+        ...state,
+        user: null
+      };
     default:
       return state;
   }
